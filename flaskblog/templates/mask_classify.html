@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Classified</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+
+.hero {
+    background-image: url(static/mask_images/10.jpg);
+    background-size: cover;
+}
+    </style>
+
+    <style>
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
+
+  </head>
+
+    
+<body>
+
+<!-- .hero -->
+<section class="hero is-fullheight" has-background-black>
+  <a href="{{ url_for('home') }}"><input value="Back To AI Pakistan" class="button is-danger" name = "image" id="classify_button" style="width: 160px; height: 60px;"></a>
+    <section class="section" style="text-align: center;">
+        <div class="container" >
+          <h1 style="font-weight: 600;
+          color: #fdfdfe;
+          text-shadow: 0px 0px 5px #3604fa, 0px 0px 10px #3604fa, 0px 0px 10px #3604fa,
+            0px 0px 20px #3604fa; font-size: 50px;"><b>Final Output after detection</b>
+        </h1>
+    </div>   
+        </section> 
+
+        <div class="columns" style="text-align: center;">
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+                <div class="column is-narrow">
+                </div>
+
+
+                <div class="column is-one-third has-text-centered">
+                  <!-- <figure class="image is-1by1"> -->
+                    <img class="pred_img" src="{{url_for('static',filename=image_name)}}" style="border: 5px solid white; "/>
+                  <!-- </figure> -->
+                </div>
+                <div class="column is-one-quarter" style="font-size:2.5rem" >
+      
+                        <h2 id ="pred" style="color:black">
+                          <span style="font-weight: 600;
+                          color: #fdfdfe;
+                          text-shadow: 0px 0px 5px #f34f09, 0px 0px 10px #f34f09, 0px 0px 10px #f34f09,
+                            0px 0px 20px #f34f09;">{{ label }}</span>
+                        </h2>
+            
+                        <h2 style="font-size: 2rem">
+                          <span style="font-weight: bold; color: #fdfdfe;
+                          text-shadow: 0px 0px 5px #06fd4c, 0px 0px 10px #06fd4c, 0px 0px 10px #f34f09,
+                            0px 0px 20px #f34f09;">{{prob}}</span>
+                        </h2>
+                        <br>
+                        <a href="{{ url_for('classificationbyimage') }}" class="button is-black is-inverted is-outlined" style="font-size:1.5rem">Classify another image</a>
+                    </div>
+            </div>    
+
+    <section class="section">
+            <div class="container">
+            </div>   
+            </section> 
+        </section>
+<!-- /.hero -->
+
+<script src="D:\final_year_project\AI Pakistan_0.1\flaskblog\static\mask_script.js"></script>
+
+</body>
+</html>

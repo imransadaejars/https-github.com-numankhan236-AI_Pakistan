@@ -1,0 +1,75 @@
+{% extends "main_layout.html" %}
+{% block body %}
+
+<div id="registration_form">
+    <section id="login" class="login">
+        <div class="container" data-aos="fade-up">
+            <!-- Side Information  -->
+            <div class="container-fluid">
+                <div class="row mt-5">
+                    <!-- first section -->
+                    <div class="col-lg-4 mt- mt-lg-0">
+                    </div>
+                    <!-- second section -->
+                    <div class="col-lg-4 mt- mt-lg-0">
+                        <div class="login-title">
+
+                            <h2>Go ahead</h2>
+
+                            <p class="border-bottom mb-4">Login Now</p>
+
+                        </div>
+                        <div class="content-section">
+                            <form method="POST" action="" class="php-email-form">
+                                {{ form.hidden_tag() }}
+                                <fieldset class="form-group">
+                                    <div class="col-md-12 form-group">
+                                        {{ form.email.label(class="form-control-label") }}
+                                        {% if form.email.errors %}
+                                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.email.errors %}
+                                            <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                        {% else %}
+                                        {{ form.email(class="form-control form-control-lg") }}
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        {{ form.password.label(class="form-control-label") }}
+                                        {% if form.password.errors %}
+                                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.password.errors %}
+                                            <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                        {% else %}
+                                        {{ form.password(class="form-control form-control-lg") }}
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-check">
+                                        {{ form.remember(class="form-check-input") }}
+                                        {{ form.remember.label(class="form-check-label") }}
+                                    </div>
+                                </fieldset>
+                                <div class="form-group">
+                                    {{ form.submit(class="btn btn-outline-info") }}
+                                </div>
+                                <small class="text-muted ml-2">
+                                    <a href="#">Forgot Password?</a>
+                                </small>
+                            </form>
+                        </div>
+                        <div class="border-top pt-3">
+                            <small class="text-muted">
+                                Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>
+{% endblock body %}

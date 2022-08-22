@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+<body style="background-image: url(static/mask_images/main-background.jpg); background-size: cover;">
+  <div style="text-align: center; margin-top: 10%;">
+    <h1 style="font-weight: 600;
+    color: #fdfdfe;
+    text-shadow: 0px 0px 5px #3604fa, 0px 0px 10px #3604fa, 0px 0px 10px #3604fa,
+            0px 0px 20px #3604fa; font-size: 50px; font-size: 50px;"><b>Facial Mask Detection Web App</b></h1>
+  </div>
+  <div class="site-wrap">   
+    <div class="container" style="margin-top: 15%;">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="d-flex team-vs">
+              <div class="team-1 w-50">
+                <a href="{{ url_for('classificationbyimage') }}">
+                  <div class="team-details w-100 text-center">
+                    <img src="static/mask_images/photo.png" alt="Image" class="img-fluid" style="height: 200px; width: 200px;">
+                    <h3>IMAGES<h3>
+                  </div>
+                </a>
+              </div>
+              <div class="team-2 w-50">
+                <a href="{{ url_for('mask_live_video') }}">
+                  <div class="team-details w-100 text-center">
+                    <img src="static/mask_images/webcam.png" alt="Image" class="img-fluid" style="height: 200px; width: 200px;">
+                    <h3>WEBCAM</h3>
+                  </div>
+                </a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <script src="flaskblog\static/js/mask_main.js"></script>
+
+
+
+{% endblock %}

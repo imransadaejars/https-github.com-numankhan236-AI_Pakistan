@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- CSS file link  -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/spam_detector.css')}}">
+
+<!-- Main content -->
+<div id="registration_form">
+    <section id="login" class="login">
+        <div class="container" data-aos="fade-up">
+
+
+
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-lg-4 mt- mt-lg-0"></div>
+                    <div class="col-lg-4 mt- mt-lg-0">
+                        <div class="logo-heading">
+                            <img src="{{url_for('static', filename='spam_detector/img/logo-w.png')}}" class="img-responsive"
+                                alt="Spam Detector">
+
+                        </div>
+                </div>
+                    <div class="container-data">
+                        
+                        <form action="/spam_detector" method="post">
+                            <p id="spam-label">Paste or write here to check spam messages</p>
+                            <textarea class="text-box" id="sentence" name="message" placeholder="Enter a message."
+                                onsubmit="return checkforblank()"></textarea><br>
+                                <div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-info" id="btn-spam">CHECK</button>
+                                </div>
+                        </form>
+                    </div>
+                    <br>
+                    {% if message %}
+                    <div class="show-result">
+                        <div class="output">
+                            <h3
+                                style="color:black; font-size:22px; font-weight:bold; font-family:'Courier New', Courier, monospace; text-transform: uppercase;">
+                                {{message}}</h3>
+                        </div>
+                        <br>
+                        {% if result=='This Message is Not a SPAM Message.' %}
+                        <div class="output-logo">
+                            <img src="{{url_for('static', filename='spam_detector/img/spam-2.png')}}">
+                        </div>
+                        {% endif %}
+                        {% if result=='This Message is Not a SPAM Message.' %}
+                        <div class="alert">
+                            <audio controls autoplay>
+                                <source src="{{url_for('static', filename='spam_detector/audio/safe.mpeg')}}"
+                                    type="audio/mp3">
+                            </audio>
+                        </div>
+                        {% endif %}
+                        {% if result=='This Message is a SPAM Message.' %}
+                        <div class="output-logo">
+                            <img src="{{url_for('static', filename='spam_detector/img/spam.png')}}">
+                        </div>
+                        {% endif %}
+                        {% if result=='This Message is Not a SPAM Message.' %}
+                        <div class="output-not">{{result}}</div>
+                        {% endif %}
+                        {% if result=='This Message is a SPAM Message.' %}
+                        <div class="output">{{result}}</div>
+                        {% endif %}
+                        {% if result=='This Message is a SPAM Message.' %}
+                        <div class="alert">
+                            <audio controls autoplay>
+                                <source src="{{url_for('static', filename='spam_detector/audio/warning.mpeg')}}"
+                                    type="audio/mp3">
+                            </audio>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% else %}
+                    {% endif %}
+                </div>
+            </div>
+    </section>
+</div>
+
+
+
+
+
+{% endblock %}

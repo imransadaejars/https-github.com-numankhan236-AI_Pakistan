@@ -1,0 +1,19 @@
+{% extends 'layout.html'%}{% block body %}
+<div id="face-detection">
+    <section id="face_detection" class="face_detection">
+        <div class="container" data-aos="fade-up">
+
+        
+                <div class="face_detection-title">
+
+                    <p>Detect Your Face Now</p>
+
+                </div>
+            </div>
+        
+              <div style="justify-content: center; display: flex; margin-top: 2px;"><img src="{{ url_for('video') }}"
+                id="capture"></div>
+     </div>
+    </section>
+</div>
+{% endblock %}
