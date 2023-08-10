@@ -2,6 +2,10 @@
 
 Welcome to the AI Pakistan project! This repository contains a comprehensive website that showcases various machine learning models developed using Python and integrated into a Flask-based web application. The project focuses on providing multiple AI-based functionalities, including a face mask detector, emotion recognition, COVID-19 detector, an AI blog writer, an interactive chatbot, and user authentication.
 
+## Demo Video
+
+Watch the demo video of the AI Pakistan website to see the functionalities in action: [Demo Video](https://youtu.be/iJM39M3Ww1w)
+
 ## Features
 
 1. **Face Mask Detector**: This feature employs machine learning to detect whether a person is wearing a face mask or not. The model has been trained to classify images accurately.
@@ -50,9 +54,6 @@ Welcome to the AI Pakistan project! This repository contains a comprehensive web
 
 5. **Access the Website**: Open your web browser and visit `http://localhost:5000` to explore the AI Pakistan website.
 
-## Demo Video
-
-Watch the demo video of the AI Pakistan website to see the functionalities in action: [Demo Video](https://youtu.be/iJM39M3Ww1w)
 
 ## Contribution
 
@@ -60,7 +61,7 @@ Contributions to this project are welcome! Feel free to submit pull requests, re
 
 ## Credits
 
-This project is developed and maintained by [Your Name]. It's inspired by the aim to promote AI awareness and education in Pakistan.
+This project is developed and maintained by me. It's inspired by the aim to promote AI awareness and education in Pakistan.
 
 ## License
 
