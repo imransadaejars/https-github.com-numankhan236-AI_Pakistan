@@ -49,7 +49,7 @@ Watch the demo video of the AI Pakistan website to see the functionalities in ac
 
 4. **Run the Application**: Start the Flask server and access the application in your browser:
    ```
-   python app.py
+   python run.py
    ```
 
 5. **Access the Website**: Open your web browser and visit `http://localhost:5000` to explore the AI Pakistan website.
